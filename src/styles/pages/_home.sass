@@ -1,0 +1,199 @@
+.page-container
+    @include width-height(100vw, 100%)
+
+    &.dark
+        background-color: $veryDarkBlueBg
+        color: $white
+
+    &.light
+        background-color: $veryLightGray
+
+
+    // Search bar
+    .search-container
+        @include width-height(100%,12rem)
+        @include flexbox(row, space-between, flex-start)
+        padding: 5rem 12rem 0 12rem
+
+        .search-input-box
+            @include width-height(50rem,6rem)
+            @include flexbox(row, space-between, center, 2rem)
+            border-radius: 0.6rem
+            padding: 0 3rem 0 3rem
+            margin-right: 3rem
+            box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
+
+            &.dark
+                background-color: $darkBlue
+                color: $white
+
+            &.light
+                background-color: $white
+                color: $veryDarkBlue
+
+            .search-icon
+                @include width-height(3rem,3rem)
+                cursor: pointer
+                opacity: 0.6
+            .placeholder
+                @include width-height(100%,100%)
+                @include flexbox(row, flex-start, center)
+                @include set-font(inherit, 'Nunito Sans', 2rem, 300, normal)
+                cursor: pointer
+
+        // Filter selector
+        .filter-box
+            
+            .filter-input-box
+                @include width-height(23rem,6rem)
+                @include flexbox(row, space-between, center, 2rem)
+                box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
+                border-radius: 0.6rem
+                padding: 0 2rem 0 2rem
+                margin-bottom: 1rem
+
+                &.dark
+                    background-color: $darkBlue
+                    color: $white
+
+                &.light
+                    background-color: $white
+                    color: $veryDarkBlue
+
+                .arrow-icon
+                    @include width-height(2rem, 2rem)
+                    transition: all 0.2s linear
+                    cursor: pointer
+                .rotate
+                    transform: rotate(180deg)
+                .placeholder
+                    @include set-font(inherit, 'Nunito Sans', 1.5rem, 600, normal)
+            
+            // Dropdown container
+            .dropdown-container
+                position: relative
+                z-index: 10
+                background-color: $white
+                @include flexbox(column, center, flex-start, 1rem)
+                @include width-height(100%, auto)
+                box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
+                border-radius: 0.4rem
+                padding: 1rem 0 1rem 0
+                opacity: 0
+                transition: all 0.2s linear
+
+                &.dark
+                    background-color: $darkBlue
+                    color: $white
+
+                &.light
+                    background-color: $white
+                    color: $veryDarkBlue
+
+                // Each value
+                .dropdown-value
+                    @include width-height(100%,3rem)
+                    @include flexbox(row, flex-start, center)
+                    padding-left: 2rem
+                    @include set-font(inherit, 'Nunito Sans', 1.4rem, 300, normal)
+                    cursor: pointer
+                    &:hover
+                        @include set-font(inherit, 'Nunito Sans', 1.4rem, 600, normal)
+                        
+            .expand
+                opacity: 1
+    // FLAGS CONTAINER
+    .flags-container
+        @include flexbox(row, space-between, flex-start)
+        flex-wrap: wrap
+        padding: 0 12rem 0 12rem
+        background: transparent
+
+        .country-element
+            @include width-height(22%,38rem)
+            min-width: 30rem
+            @include flexbox(column, flex-start, flex-start)
+            box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
+            margin: 5rem 0 3rem 0
+            border-radius: 0.8rem
+            z-index: 0
+
+
+            &.dark
+                background-color: $darkBlue
+            &.light
+                background-color: $white
+
+            .country-flag
+                height: 20rem
+                width: 100%
+                box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
+                border-radius: 0.8rem 0.8rem 0 0
+
+            .country-information
+                @include flexbox(column, flex-start, flex-start, 1rem)
+                padding: 2rem
+
+                .country-name
+                    @include set-font(inherit, 'Nunito Sans', 2rem, 800, normal)
+                    
+                .country-detail
+                    @include set-font(inherit, 'Nunito Sans', 1.4rem, 300, normal)
+
+                    span
+                        @include set-font(inherit, 'Nunito Sans', 1.4rem, 600, normal)
+        // Pagination
+
+        .pages-container
+            @include width-height(100%,100%)
+            @include flexbox(row, center, center, 5rem)
+            padding: 2rem 0 2rem
+            .arrow-btn
+                @include width-height(4rem,4rem)
+                opacity: 0.7
+                cursor: pointer
+                &.rotate
+                    transform: rotate(180deg)
+
+// Mobil design
+@include respond(mobile)
+    .page-container
+        
+        // Search bar
+        .search-container
+            height: 20rem
+            @include flexbox(column, space-between, flex-start, 2rem)
+            padding: 2.8rem
+
+            .search-input-box
+                @include width-height(100%,5.5rem)
+                @include flexbox(row, space-between, center, 2rem)
+                border-radius: 0.6rem
+                padding: 0 3rem 0 3rem
+                margin:0
+                max-width: 40rem
+                .placeholder
+                    font-size: 1.6rem
+
+            .filter-box
+                height: 5.5rem
+                .filter-input-box
+                    @include width-height(23rem,5.5rem)
+
+
+        .flags-container
+            @include flexbox(row, center, flex-start)
+
+            padding: 0
+            .country-element
+                width: 70%
+
+
+
+
+
+
+
+
+
+

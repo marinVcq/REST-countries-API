@@ -1,0 +1,52 @@
+.navbar-container
+    @include width-height(100vw, 8.5rem)
+    @include flexbox(row, space-between, center)
+    padding: 0 12rem 0 12rem
+    box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
+    z-index: 10
+
+    &.dark
+        background-color: $darkBlue
+        color: $white
+
+    &.light
+        background-color: $white
+        color: $veryDarkBlue
+        
+    // Left text
+    .navbar-label
+        @include set-font(inherit, 'Nunito Sans', 3rem, 800, normal)
+    
+    .toggle-btn-container
+        @include flexbox(row, space-between, center,1rem)
+        cursor: pointer
+
+        .toggle-icon
+            @include width-height(2.6rem,2.6rem)
+            cursor: pointer
+
+        p
+            @include set-font(inherit, 'Nunito Sans', 2rem, 600, normal)
+            cursor: pointer
+
+// Mobile Design
+@include respond(mobile)
+    .navbar-container
+        padding: 0 3rem 0 3rem
+
+        // Left text
+        .navbar-label
+            @include set-font(inherit, 'Nunito Sans', 1.8rem, 800, normal)
+        
+        .toggle-btn-container
+            @include flexbox(row, space-between, center,1rem)
+            cursor: pointer
+
+            .toggle-icon
+                @include width-height(2.2rem,2.2rem)
+                cursor: pointer
+
+            p
+                @include set-font(inherit, 'Nunito Sans', 1.6rem, 600, normal)
+                cursor: pointer
+
