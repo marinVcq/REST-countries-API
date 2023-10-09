@@ -1,0 +1,109 @@
+.page-container
+
+    .back-button
+        @include flexbox(row, center, center,1rem)
+        @include width-height(13rem, 5rem)
+        border-radius: 0.6rem
+        box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
+        margin:2rem 0 0 12rem
+        cursor: pointer
+
+
+        &.dark
+            color: $white
+            background-color: $darkBlue 
+        &.light
+            color: $veryDarkBlue
+            background-color: $white
+
+
+        p
+            @include set-font(inherit, 'Nunito Sans', 1.8rem, 600, normal)
+            cursor: inherit
+
+        img
+            cursor: inherit
+            @include width-height(3rem, 3rem)
+        
+    .country-details
+        @include width-height(100%,100%)
+        @include flexbox(row, flex-start, flex-start,10rem)
+        padding: 4rem 12rem 0 12rem
+
+        img
+            width: 40%
+            max-height: 40rem
+        .details-container
+            @include flexbox(column, flex-start, flex-start,1rem)
+
+            .name
+                @include set-font(inherit, 'Nunito Sans', 3rem, 800, normal)
+
+
+
+            .details
+                margin-top: 2rem
+                @include flexbox(row, space-between, flex-start, 10rem)
+
+                div
+                    @include flexbox(column, flex-start, flex-start, 1rem)
+                    p
+                        @include set-font(inherit, 'Nunito Sans', 1.6rem, 300, normal)
+                    span
+                        @include set-font(inherit, 'Nunito Sans', 1.6rem, 600, normal)
+                    .languages
+                        @include set-font(inherit, 'Nunito Sans', 1.6rem, 300, normal)
+
+
+            .border-countries
+                margin-top: 10rem
+                @include flexbox(row, flex-start, center, 1rem)
+                flex-wrap: wrap
+
+                span
+                    @include set-font(inherit, 'Nunito Sans',1.6rem, 600, normal)
+                .border-name
+                    @include set-font(inherit, 'Nunito Sans',1.6rem, 300, normal)
+                    box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
+                    padding: 0.5rem
+                    border-radius: 0.4rem
+
+                    &.dark
+                        background-color: $darkBlue
+                    &.light
+                        background-color: $white
+@include respond(mobile)
+    .page-container
+
+        .back-button
+            margin: 0 0 0 3rem
+
+        .country-details
+            padding: 6rem 3rem 0 3rem
+            @include flexbox(row, flex-start, flex-start,4rem)
+            flex-wrap: wrap
+
+
+
+            img
+                width: 100%
+                max-height: 40rem
+
+            .details-container
+                @include flexbox(column, flex-start, flex-start,1rem)
+
+                .name
+                    @include set-font(inherit, 'Nunito Sans', 3rem, 800, normal)
+
+                .details
+                    margin-top: 2rem
+                    @include flexbox(column, flex-start, flex-start, 5rem)
+        
+                .border-countries
+                    .label
+                        width: 100%
+                    margin-top: 4rem
+
+
+
+

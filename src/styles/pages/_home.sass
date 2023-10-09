@@ -1,5 +1,7 @@
 .page-container
     @include width-height(100vw, 100%)
+    min-height: 100vh
+    padding-top: 12rem
 
     &.dark
         background-color: $veryDarkBlueBg
@@ -35,11 +37,16 @@
                 @include width-height(3rem,3rem)
                 cursor: pointer
                 opacity: 0.6
-            .placeholder
+            .input-field
                 @include width-height(100%,100%)
                 @include flexbox(row, flex-start, center)
                 @include set-font(inherit, 'Nunito Sans', 2rem, 300, normal)
                 cursor: pointer
+                border: none
+                caret-color: black
+                background: transparent
+                &::placeholder
+                    color: inherit
 
         // Filter selector
         .filter-box
@@ -66,7 +73,7 @@
                     cursor: pointer
                 .rotate
                     transform: rotate(180deg)
-                .placeholder
+                .input-field
                     @include set-font(inherit, 'Nunito Sans', 1.5rem, 600, normal)
             
             // Dropdown container
@@ -110,7 +117,7 @@
         background: transparent
 
         .country-element
-            @include width-height(22%,38rem)
+            @include width-height(40rem,100%)
             min-width: 30rem
             @include flexbox(column, flex-start, flex-start)
             box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
@@ -124,11 +131,16 @@
             &.light
                 background-color: $white
 
-            .country-flag
-                height: 20rem
-                width: 100%
-                box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
-                border-radius: 0.8rem 0.8rem 0 0
+            .flag-link
+                background-color: red
+                @include width-height(100%, 25rem)
+                @include flexbox(row, center, center)
+                .country-flag
+                    width: 100%
+                    height: 25rem
+                    box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
+                    border-radius: 0.8rem 0.8rem 0 0z
+                    cursor: pointer
 
             .country-information
                 @include flexbox(column, flex-start, flex-start, 1rem)
@@ -172,7 +184,7 @@
                 padding: 0 3rem 0 3rem
                 margin:0
                 max-width: 40rem
-                .placeholder
+                .input-field
                     font-size: 1.6rem
 
             .filter-box

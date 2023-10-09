@@ -1,5 +1,6 @@
 // Import pages
 import Home from './pages/Home';
+import Detail from './pages/Detail';
 
 // Import components
 import Navbar from './components/Navbar';
@@ -12,6 +13,7 @@ import ScrollToTop from './components/ScrollToTop';
 // React router import 
 import {
   createBrowserRouter,
+  createHashRouter,
   RouterProvider,
   Outlet,
 } from "react-router-dom";
@@ -29,7 +31,7 @@ const Layout = () => {
 };
 
 // Create routes
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/detail/:countryName",
+        element: <Detail/>,
+      },    
     ],
   },
 ]);
