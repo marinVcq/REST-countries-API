@@ -61,7 +61,7 @@ const Detail = () => {
                 <div className="details">
                     <div>
                         <p><span>Native Name: </span> {countryDetails.nativeName}</p>
-                        <p><span>Population: </span> {countryDetails.population}</p>
+                        <p><span>Population: </span> {countryDetails.population.toLocaleString('en-US')}</p>
                         <p><span>Region: </span>{countryDetails.region}</p>
                         <p><span>Sub Region: </span> {countryDetails.subregion}</p>
                         <p><span>Capital:</span> {countryDetails.subregion}</p>

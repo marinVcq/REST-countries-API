@@ -111,14 +111,14 @@
                 opacity: 1
     // FLAGS CONTAINER
     .flags-container
-        @include flexbox(row, space-between, flex-start)
+        @include flexbox(row, space-between, flex-start, 1rem)
         flex-wrap: wrap
         padding: 0 12rem 0 12rem
         background: transparent
 
         .country-element
-            @include width-height(40rem,100%)
-            min-width: 30rem
+            @include width-height(21%,36rem)
+            min-width: 22rem
             @include flexbox(column, flex-start, flex-start)
             box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
             margin: 5rem 0 3rem 0
@@ -132,13 +132,15 @@
                 background-color: $white
 
             .flag-link
-                @include width-height(100%, 25rem)
+                @include width-height(100%, 17rem)
                 @include flexbox(row, center, center)
+                border-radius: 0.8rem 0.8rem 0 0
+
                 .country-flag
                     width: 100%
-                    height: 25rem
+                    height: 17rem
                     box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.05)
-                    border-radius: 0.8rem 0.8rem 0 0z
+                    border-radius: 0.8rem 0.8rem 0 0
                     cursor: pointer
 
             .country-information
@@ -198,6 +200,7 @@
             padding: 0
             .country-element
                 width: 70%
+                max-width: 40rem
 
 
 
